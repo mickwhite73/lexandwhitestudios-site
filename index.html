@@ -32,8 +32,9 @@
       </div>
     </div>
 
+    
     <button class="theme-toggle" onclick="toggleTheme()">Classic
-
+    
     </button>
 
   </div>
@@ -76,14 +77,17 @@
 
   <!-- Theme switching logic -->
   
-  <script>
+<script>
   const themeLink = document.getElementById("themeStylesheet");
   const themeToggle = document.getElementById("themeToggle");
   const savedTheme = localStorage.getItem("theme");
 
   function applyTheme(theme) {
     themeLink.href = theme === "gallery" ? "gallery.css" : "studio.css";
-    themeToggle.textContent = theme === "gallery" ? "Gallery" : "Studio";
+
+    /* User-facing names */
+    themeToggle.textContent = theme === "gallery" ? "Classic" : "Modern";
+
     localStorage.setItem("theme", theme);
   }
 
@@ -91,11 +95,24 @@
     applyTheme(savedTheme);
   }
 
+  <script>
+  const themeLink = document.getElementById("themeStylesheet");
+  const themeToggle = document.getElementById("themeToggle");
+  const savedTheme = localStorage.getItem("theme");
+
+  function applyTheme(theme) {
+    themeLink.href = theme === "gallery" ? "gallery.css" : "studio.css";
+
+    /* User-facing names */
+    themeToggle.textContent = theme === "gallery" ? "Classic" : "Modern";
+
+    localStorage.setItem("theme", theme);
+  }
+
   function toggleTheme() {
     const current = themeLink.href.includes("gallery") ? "gallery" : "studio";
     applyTheme(current === "gallery" ? "studio" : "gallery");
   }
 </script>
-
 </body>
 </html>
