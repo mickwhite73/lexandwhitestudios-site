@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-au">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>WebStudio | The internet, done right.</title>
+
+  <meta
+    name="description"
+    content="WebStudio — a unified workspace with powerful search and privacy-focused design."
+  />
+
+  <!-- Theme stylesheet (JS swaps this) -->
+  <link
+    id="themeStylesheet"
+    rel="stylesheet"
+    href="studio.css"
+  />
+
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+
+      <div class="brandtext">
+        <div class="brandname">WebStudio</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page content goes here -->
+  <main>
+    <!-- placeholder for now -->
+  </main>
+
+  <!-- Theme switching logic -->
+  <script>
+    const themeLink = document.getElementById("themeStylesheet");
+
+    function setTheme(theme) {
+      themeLink.href = theme === "gallery" ? "gallery.css" : "studio.css";
+      localStorage.setItem("theme", theme);
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) setTheme(savedTheme);
+  </script>
+
+</body>
+</html>
