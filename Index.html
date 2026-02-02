@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-au">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WebStudio | The internet, done right.</title>
+  <meta name="description" content="WebStudio — a unified workspace with powerful search and privacy-focused design." />
+
+  <!-- Default theme loads first; JS will swap if user previously chose Gallery -->
+  <link id="themeStylesheet" rel="stylesheet" href="studio.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div class="brandtext">
+        <div class="brandname">WebStudio</div>
+      </div>
+    </div>
+
+    <div class="themeSwitch" role="group" aria-label="Theme selector">
+      <span class="themeLabel">Theme:</span>
+      <button id="btnGallery" class="pill" type="button" aria-pressed="false">Gallery</button>
+      <button id="btnStudio" class="pill" type="button" aria-pressed="true">Studio</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <h1>The internet, done right.</h1>
+      <p class="sub">
+        A unified workspace for everyday people. Fast search, calm UI, and privacy-first design.
+      </p>
+
+      <div class="searchRow" aria-label="Search preview (demo)">
+        <div class="searchIcon" aria-hidden="true">⌕</div>
+        <input class="searchBox" type="text" placeholder="Search..." disabled />
+        <div class="searchBadges" aria-hidden="true">
+          <span class="badge">🔒</span>
+          <span class="badge">⭐</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="featureCard">
+        <div class="featureIcon" aria-hidden="true">▦</div>
+        <h2>Unified workspace</h2>
+        <p>Launch tools, settings, and web dashboards from one place, without the clutter.</p>
+      </div>
+
+      <div class="featureCard">
+        <div class="featureIcon" aria-hidden="true">⌕</div>
+        <h2>Powerful search</h2>
+        <p>Find apps, shortcuts, settings, and saved links quickly, like it should be.</p>
+      </div>
+
+      <div class="featureCard">
+        <div class="featureIcon" aria-hidden="true">🔒</div>
+        <h2>Privacy focused</h2>
+        <p>No creepy tracking. No nonsense. Your workspace stays yours.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <a class="downloadBtn" href="#" aria-disabled="true" title="Download will be enabled when released">
+        Download
+      </a>
+      <p class="ctaNote">Download will go live when the first public build is ready.</p>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Lex & White Studios Pty Ltd</div>
+      <div class="footerLinks">
+        <a href="#" aria-disabled="true">Privacy</a>
+        <a href="#" aria-disabled="true">Support</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const yearEl = document.getElementById("year");
+    yearEl.textContent = new Date().getFullYear();
+
+    const sheet = document.getElementById("themeStylesheet");
+    const btnGallery = document.getElementById("btnGallery");
+    const btnStudio = document.getElementById("btnStudio");
+
+    const THEME_KEY = "wsTheme"; // "gallery" | "studio"
+
+    function setTheme(theme) {
+      if (theme === "gallery") {
+        sheet.setAttribute("href", "gallery.css");
+        btnGallery.setAttribute("aria-pressed", "true");
+        btnStudio.setAttribute("aria-pressed", "false");
+      } else {
+        sheet.setAttribute("href", "studio.css");
+        btnGallery.setAttribute("aria-pressed", "false");
+        btnStudio.setAttribute("aria-pressed", "true");
+      }
+      localStorage.setItem(THEME_KEY, theme);
+    }
+
+    btnGallery.addEventListener("click", () => setTheme("gallery"));
+    btnStudio.addEventListener("click", () => setTheme("studio"));
+
+    // Load saved preference
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === "gallery" || saved === "studio") setTheme(saved);
+  </script>
+</body>
+</html>
