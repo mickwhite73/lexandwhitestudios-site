@@ -12,107 +12,92 @@
   />
 
   <!-- Theme stylesheet (JS swaps this) -->
-  <link
-    id="themeStylesheet"
-    rel="stylesheet"
-    href="modern.css"
-  />
-
+  <link id="themeStylesheet" rel="stylesheet" href="modern.css" />
 </head>
 
 <body>
 
   <header class="topbar">
-  <div class="topbar-inner">
+    <div class="topbar-inner">
 
-    <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
-      <div class="brandtext">
-        <div class="brandname">WebStudio</div>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brandtext">
+          <div class="brandname">WebStudio</div>
+        </div>
+      </div>
+
+      <!-- Button label shows the CURRENT theme -->
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        onclick="toggleTheme()"
+      >
+        Modern
+      </button>
+
+    </div>
+  </header>
+
+  <main class="hero">
+    <h1 class="headline">The internet, done right.</h1>
+    <p class="subhead">
+      A unified workspace with powerful search and privacy-focused design.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="#download">Download</a>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-card">
+        <div class="feature-title">Unified Workspace</div>
+        <div class="feature-text">Keep your web, apps, and shortcuts organised in one place.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-title">Powerful Search</div>
+        <div class="feature-text">Find settings, apps, and sites fast, without the mess.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-title">Privacy focused</div>
+        <div class="feature-text">Built for everyday people, not data harvesting.</div>
       </div>
     </div>
 
-    
-    <button class="theme-toggle" onclick="toggleTheme()">Classic
-    
-    </button>
-
-  </div>
-</header>
-
-  <!-- Page content goes here -->
-  <main class="hero">
-  <h1 class="headline">The internet, done right.</h1>
-  <p class="subhead">
-    A unified workspace with powerful search and privacy-focused design.
-  </p>
-
-  <div class="hero-actions">
-    <a class="btn-primary" href="#download">Download</a>
-  </div>
-
-  <div class="feature-row">
-    <div class="feature-card">
-      <div class="feature-title">Unified Workspace</div>
-      <div class="feature-text">Keep your web, apps, and shortcuts organised in one place.</div>
+    <div id="download" class="download-strip">
+      <div class="download-title">Ready when you are.</div>
+      <div class="download-sub">Download WebStudio for Windows.</div>
+      <button class="btn-download" type="button" disabled>Download (coming soon)</button>
     </div>
-
-    <div class="feature-card">
-      <div class="feature-title">Powerful Search</div>
-      <div class="feature-text">Find settings, apps, and sites fast, without the mess.</div>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-title">Privacy focused</div>
-      <div class="feature-text">Built for everyday people, not data harvesting.</div>
-    </div>
-  </div>
-
-  <div id="download" class="download-strip">
-    <div class="download-title">Ready when you are.</div>
-    <div class="download-sub">Download WebStudio for Windows.</div>
-    <button class="btn-download" type="button" disabled>Download (coming soon)</button>
-  </div>
-</main>
-
-  <!-- Theme switching logic -->
-  
-<script>
-  const themeLink = document.getElementById("themeStylesheet");
-  const themeToggle = document.getElementById("themeToggle");
-  const savedTheme = localStorage.getItem("theme");
-
-  function applyTheme(theme) {
-    themeLink.href = theme === "gallery" ? "gallery.css" : "studio.css";
-
-    /* User-facing names */
-    themeToggle.textContent = theme === "gallery" ? "Classic" : "Modern";
-
-    localStorage.setItem("theme", theme);
-  }
-
-  if (savedTheme) {
-    applyTheme(savedTheme);
-  }
+  </main>
 
   <script>
-  const themeLink = document.getElementById("themeStylesheet");
-  const themeToggle = document.getElementById("themeToggle");
-  const savedTheme = localStorage.getItem("theme");
+    const themeLink = document.getElementById("themeStylesheet");
+    const themeToggle = document.getElementById("themeToggle");
 
-  function applyTheme(theme) {
-    themeLink.href = theme === "gallery" ? "gallery.css" : "studio.css";
+    function applyTheme(theme) {
+      const cssFile = theme === "classic" ? "classic.css" : "modern.css";
+      themeLink.href = cssFile;
 
-    /* User-facing names */
-    themeToggle.textContent = theme === "gallery" ? "Classic" : "Modern";
+      // Label shows CURRENT theme
+      themeToggle.textContent = theme === "classic" ? "Classic" : "Modern";
 
-    localStorage.setItem("theme", theme);
-  }
+      localStorage.setItem("theme", theme);
+    }
 
-  function toggleTheme() {
-    const current = themeLink.href.includes("gallery") ? "gallery" : "studio";
-    applyTheme(current === "gallery" ? "studio" : "gallery");
-  }
-</script>
+    // Load saved theme or default to Modern
+    const savedTheme = localStorage.getItem("theme");
+    applyTheme(savedTheme === "classic" ? "classic" : "modern");
+
+    // Toggle between Modern and Classic
+    function toggleTheme() {
+      const currentIsClassic = themeLink.href.includes("classic.css");
+      applyTheme(currentIsClassic ? "modern" : "classic");
+    }
+  </script>
+
 </body>
 </html>
