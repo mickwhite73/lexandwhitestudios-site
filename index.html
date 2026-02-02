@@ -70,18 +70,7 @@
 </main>
 
   <!-- Theme switching logic -->
-  <script>
-    const themeLink = document.getElementById("themeStylesheet");
-
-    function setTheme(theme) {
-      themeLink.href = theme === "gallery" ? "gallery.css" : "studio.css";
-      localStorage.setItem("theme", theme);
-    }
-
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) setTheme(savedTheme);
-  </script>
-
+  
   <script>
   const themeLink = document.getElementById("themeStylesheet");
   const savedTheme = localStorage.getItem("theme");
