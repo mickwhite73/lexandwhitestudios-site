@@ -22,10 +22,10 @@
 
 <body>
 
-  <header class="topbar"> <button class="theme-toggle" onclick="toggleTheme()">
-  Theme
+  <header class="topbar"> 
+    <div class="brand"><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+  Studio
 </button>
-    <div class="brand">
       <div class="logo" aria-hidden="true"></div>
 
       <div class="brandtext">
@@ -73,23 +73,22 @@
   
   <script>
   const themeLink = document.getElementById("themeStylesheet");
+  const themeToggle = document.getElementById("themeToggle");
   const savedTheme = localStorage.getItem("theme");
 
+  function applyTheme(theme) {
+    themeLink.href = theme === "gallery" ? "gallery.css" : "studio.css";
+    themeToggle.textContent = theme === "gallery" ? "Gallery" : "Studio";
+    localStorage.setItem("theme", theme);
+  }
+
   if (savedTheme) {
-    themeLink.href = savedTheme === "gallery"
-      ? "gallery.css"
-      : "studio.css";
+    applyTheme(savedTheme);
   }
 
   function toggleTheme() {
-    const isGallery = themeLink.href.includes("gallery.css");
-    const newTheme = isGallery ? "studio" : "gallery";
-
-    themeLink.href = newTheme === "gallery"
-      ? "gallery.css"
-      : "studio.css";
-
-    localStorage.setItem("theme", newTheme);
+    const current = themeLink.href.includes("gallery") ? "gallery" : "studio";
+    applyTheme(current === "gallery" ? "studio" : "gallery");
   }
 </script>
 
