@@ -45,7 +45,11 @@ body{
   background: linear-gradient(135deg, rgba(90,200,250,.9), rgba(45,125,255,.9));
   box-shadow: 0 10px 22px rgba(45,125,255,.35);
 }
-.brandname{font-weight:700; letter-spacing:.2px; font-size:18px;}
+.brandname {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
 
 .themeSwitch{display:flex; align-items:center; gap:10px;}
 .themeLabel{color:var(--muted); font-size:14px;}
