@@ -35,14 +35,47 @@ body{
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
 }
 
-.brand{display:flex; align-items:center; gap:12px;}
+.topbar {
+  max-width: 1060px;
+  margin: 18px auto 0;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(110,70,40,0.25);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandname {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.theme-toggle {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.7);
+  color: var(--ink);
+}
+
 .logo{
   width:28px; height:28px; border-radius:8px;
   background: linear-gradient(135deg, var(--frame), var(--frame2));
   box-shadow: 0 10px 18px rgba(110,76,42,.18);
 }
-.brandname{font-weight:800; letter-spacing:.2px; font-size:20px;}
-
+ 
 .themeSwitch{display:flex; align-items:center; gap:10px;}
 .themeLabel{color: var(--muted); font-size:14px;}
 

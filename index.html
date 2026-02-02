@@ -22,17 +22,22 @@
 
 <body>
 
-  <header class="topbar"> 
-    <div class="brand"><button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
-  Studio
-</button>
-      <div class="logo" aria-hidden="true"></div>
+  <header class="topbar">
+  <div class="topbar-inner">
 
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
       <div class="brandtext">
         <div class="brandname">WebStudio</div>
       </div>
     </div>
-  </header>
+
+    <button class="theme-toggle" id="themeToggle" type="button" onclick="toggleTheme()">
+      Theme
+    </button>
+
+  </div>
+</header>
 
   <!-- Page content goes here -->
   <main class="hero">
