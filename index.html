@@ -12,7 +12,7 @@
   />
 
   <!-- Theme stylesheet (JS swaps this) -->
-  <link id="themeStylesheet" rel="stylesheet" href="modern.css" />
+  <link id="themeStylesheet" rel="stylesheet" href="/modern.css" />
 </head>
 
 <body>
@@ -27,12 +27,13 @@
         </div>
       </div>
 
-      <!-- Button label shows the CURRENT theme -->
+      <!-- Button stays on the RIGHT -->
       <button
         class="theme-toggle"
         id="themeToggle"
         type="button"
         onclick="toggleTheme()"
+        aria-label="Toggle theme"
       >
         Modern
       </button>
@@ -79,12 +80,15 @@
     const themeToggle = document.getElementById("themeToggle");
 
     function applyTheme(theme) {
-      const cssFile = theme === "classic" ? "classic.css" : "modern.css";
-      themeLink.href = cssFile;
+      const cssFile = theme === "classic" ? "/classic.css" : "/modern.css";
+
+      // Avoid re-applying the same stylesheet
+      if (!themeLink.href.endsWith(cssFile)) {
+        themeLink.href = cssFile;
+      }
 
       // Label shows CURRENT theme
       themeToggle.textContent = theme === "classic" ? "Classic" : "Modern";
-
       localStorage.setItem("theme", theme);
     }
 
@@ -94,7 +98,7 @@
 
     // Toggle between Modern and Classic
     function toggleTheme() {
-      const currentIsClassic = themeLink.href.includes("classic.css");
+      const currentIsClassic = themeLink.href.includes("/classic.css");
       applyTheme(currentIsClassic ? "modern" : "classic");
     }
   </script>
