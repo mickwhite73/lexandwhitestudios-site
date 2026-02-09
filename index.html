@@ -12,7 +12,7 @@
   />
 
   <!-- Theme stylesheet (JS swaps this) -->
-  <link id="themeStylesheet" rel="stylesheet" href="/modern.css" />
+  <link id="themeStylesheet" rel="stylesheet" href="modern.css" />
 </head>
 
 <body>
@@ -27,13 +27,12 @@
         </div>
       </div>
 
-      <!-- Button stays on the RIGHT -->
+      <!-- Shows CURRENT theme -->
       <button
         class="theme-toggle"
         id="themeToggle"
         type="button"
         onclick="toggleTheme()"
-        aria-label="Toggle theme"
       >
         Modern
       </button>
@@ -68,6 +67,29 @@
       </div>
     </div>
 
+    <!-- PRICING (new) -->
+    <section class="pricing" id="pricing">
+      <h2 class="section-title">Pricing</h2>
+
+      <div class="pricing-card">
+        <div class="pricing-top">
+          <div class="pricing-name">WebStudio — Standard</div>
+          <div class="pricing-price">AUD $59</div>
+        </div>
+
+        <div class="pricing-sub">3-year licence · No subscription</div>
+
+        <ul class="pricing-list">
+          <li>One user</li>
+          <li>All core features</li>
+          <li>Updates included for 3 years</li>
+          <li>Buy once, use it</li>
+        </ul>
+
+        <div class="pricing-note">Advanced edition coming later.</div>
+      </div>
+    </section>
+
     <div id="download" class="download-strip">
       <div class="download-title">Ready when you are.</div>
       <div class="download-sub">Download WebStudio for Windows.</div>
@@ -80,26 +102,17 @@
     const themeToggle = document.getElementById("themeToggle");
 
     function applyTheme(theme) {
-      const cssFile = theme === "classic" ? "/classic.css" : "/modern.css";
-
-      // Avoid re-applying the same stylesheet
-      if (!themeLink.href.endsWith(cssFile)) {
-        themeLink.href = cssFile;
-      }
-
-      // Label shows CURRENT theme
+      themeLink.href = theme === "classic" ? "classic.css" : "modern.css";
       themeToggle.textContent = theme === "classic" ? "Classic" : "Modern";
       localStorage.setItem("theme", theme);
     }
 
-    // Load saved theme or default to Modern
     const savedTheme = localStorage.getItem("theme");
     applyTheme(savedTheme === "classic" ? "classic" : "modern");
 
-    // Toggle between Modern and Classic
     function toggleTheme() {
-      const currentIsClassic = themeLink.href.includes("/classic.css");
-      applyTheme(currentIsClassic ? "modern" : "classic");
+      const isClassic = themeLink.href.includes("classic.css");
+      applyTheme(isClassic ? "modern" : "classic");
     }
   </script>
 
