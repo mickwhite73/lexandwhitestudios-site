@@ -204,23 +204,23 @@ body{
   margin: 34px 0 14px;
   font-size: 22px;
   font-weight: 800;
-  text-align: left;
+  text-align: center;
 }
 
 .pricing{
-  margin-top: 28px;
-  text-align: left;
+  margin-top: 24px;
+  text-align: center;
 }
 
 .pricing-card{
-border: 1px solid rgba(110,76,42,.22);
-background: rgba(255,255,255,.55);
-box-shadow: 0 10px 22px rgba(0,0,0,.10);
-}
-
-.pricing-card{
+  max-width: 560px;
+  margin: 0 auto;
   border-radius: 16px;
   padding: 18px;
+
+  border: 1px solid rgba(110,76,42,.28);
+  background: rgba(255,255,255,.70);
+  box-shadow: 0 16px 40px rgba(0,0,0,.14);
 }
 
 .pricing-top{
@@ -228,6 +228,7 @@ box-shadow: 0 10px 22px rgba(0,0,0,.10);
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
+  text-align: left;
 }
 
 .pricing-name{
@@ -241,18 +242,21 @@ box-shadow: 0 10px 22px rgba(0,0,0,.10);
 }
 
 .pricing-sub{
-  margin-top: 6px;
+  margin-top: 8px;
   opacity: 0.85;
 }
 
 .pricing-list{
-  margin: 14px 0 10px;
-  padding-left: 18px;
+  margin: 14px auto 10px;
+  padding-left: 20px;
   line-height: 1.6;
+
+  display: inline-block;
+  text-align: left;
 }
 
 .pricing-note{
-  margin-top: 8px;
+  margin-top: 10px;
   opacity: 0.75;
   font-size: 14px;
 }
