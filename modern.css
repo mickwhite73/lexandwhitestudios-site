@@ -175,11 +175,6 @@ body{
   cursor:not-allowed;
 }
 
-.btn-buy:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 20px 46px rgba(45,125,255,.45);
-}
-
 /* ===== PRICING ===== */
 
 .section-title{
@@ -253,6 +248,11 @@ body{
   border-radius: 14px;
   text-decoration: none;
 
+.btn-buy:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 20px 46px rgba(45,125,255,.45);
+}
+  
   font-weight: 800;
   color: white;
   background: linear-gradient(180deg, var(--accent2), #1E4EFF);
