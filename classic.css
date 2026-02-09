@@ -213,6 +213,12 @@ body{
 }
 
 .pricing-card{
+border: 1px solid rgba(110,76,42,.22);
+background: rgba(255,255,255,.55);
+box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+
+.pricing-card{
   border-radius: 16px;
   padding: 18px;
 }
