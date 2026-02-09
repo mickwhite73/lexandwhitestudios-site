@@ -111,7 +111,7 @@
     const themeToggle = document.getElementById("themeToggle");
 
     function applyTheme(theme) {
-      themeLink.href = theme === "classic" ? "classic.css?v=1" : "modern.css?v=2";
+      themeLink.href = theme === "classic" ? "classic.css?v=2" : "modern.css?v=2";
       themeToggle.textContent = theme === "classic" ? "Classic" : "Modern";
       localStorage.setItem("theme", theme);
     }
