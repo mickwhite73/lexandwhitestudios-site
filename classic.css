@@ -217,7 +217,8 @@ body{
   margin: 0 auto;
   border-radius: 16px;
   padding: 18px;
-
+  
+  outline: 6px solid red !important;
   border: 1px solid rgba(110,76,42,.28);
   background: rgba(255,255,255,.70);
   box-shadow: 0 16px 40px rgba(0,0,0,.14);
