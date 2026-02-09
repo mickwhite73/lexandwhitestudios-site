@@ -240,3 +240,24 @@ body{
   opacity: 0.75;
   font-size: 14px;
 }
+
+.btn-buy{
+  display:inline-block;
+  margin-top: 14px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  text-decoration: none;
+
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(180deg, var(--accent2), #1E4EFF);
+  box-shadow: 0 16px 40px rgba(45,125,255,.35);
+
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn-buy:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 20px 46px rgba(45,125,255,.45);
+}
+
