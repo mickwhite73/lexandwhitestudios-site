@@ -175,6 +175,11 @@ body{
   cursor:not-allowed;
 }
 
+.btn-buy:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 20px 46px rgba(45,125,255,.45);
+}
+
 /* ===== PRICING ===== */
 
 .section-title{
@@ -256,8 +261,4 @@ body{
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
-.btn-buy:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 20px 46px rgba(45,125,255,.45);
-}
 
