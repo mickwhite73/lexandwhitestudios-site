@@ -12,7 +12,7 @@
   />
 
   <!-- Theme stylesheet (JS swaps this) -->
-  <link id="themeStylesheet" rel="stylesheet" href="modern.css?v=1" />
+  <link id="themeStylesheet" rel="stylesheet" href="modern.css?v=2" />
 </head>
 
 <body>
@@ -111,7 +111,7 @@
     const themeToggle = document.getElementById("themeToggle");
 
     function applyTheme(theme) {
-      themeLink.href = theme === "classic" ? "classic.css?v=1" : "modern.css?v=1";
+      themeLink.href = theme === "classic" ? "classic.css?v=1" : "modern.css?v=2";
       themeToggle.textContent = theme === "classic" ? "Classic" : "Modern";
       localStorage.setItem("theme", theme);
     }
