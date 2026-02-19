@@ -1,5 +1,6 @@
 {
-  "version": "2.0.0",
+  "latest": "1.0.1",
   "downloadUrl": "https://lexandwhitestudios.com/webstudio/WebStudioInstaller.exe",
-  "notes": "Test update"
+  "notes": "Initial public release"
 }
+
