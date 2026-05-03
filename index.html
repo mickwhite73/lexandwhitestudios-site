@@ -4,15 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>WebStudio | The internet, done right.</title>
+  <title>Web Protect Pro | Private Browsing. Complete Peace of Mind.</title>
 
   <meta
     name="description"
-    content="WebStudio — a unified workspace with powerful search and privacy-focused design."
+    content="Web Protect Pro is a privacy-first Windows browser with tracker and ad blocking, DNS protection, secure browsing tools, quick URLs, multi-page browsing, and compatibility controls."
   />
 
-  <!-- Theme stylesheet (JS swaps this) -->
-  <link id="themeStylesheet" rel="stylesheet" href="modern.css?v=2" />
+  <link id="themeStylesheet" rel="stylesheet" href="dark.css?v=2" />
 </head>
 
 <body>
@@ -23,86 +22,99 @@
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <div class="brandtext">
-          <div class="brandname">WebStudio</div>
+          <div class="brandname">Web Protect Pro</div>
         </div>
       </div>
 
-      <!-- Shows CURRENT theme -->
       <button
         class="theme-toggle"
         id="themeToggle"
         type="button"
         onclick="toggleTheme()"
       >
-        Modern
+        Dark
       </button>
 
     </div>
   </header>
 
   <main class="hero">
-    <h1 class="headline">The internet, done right.</h1>
+    <h1 class="headline">Private Browsing. Complete Peace of Mind.</h1>
+
     <p class="subhead">
-      A unified workspace with powerful search and privacy-focused design.
+      A privacy-first Windows browser that helps block trackers, ads, and unwanted noise — so you can browse faster, safer, and with more control.
     </p>
 
     <div class="hero-actions">
-      <a class="btn-primary" href="#download">Coming Soon</a>
+      <a class="btn-primary" href="#download">Download Now</a>
     </div>
 
     <div class="feature-row">
       <div class="feature-card">
-        <div class="feature-title">Unified Workspace</div>
-        <div class="feature-text">Keep your web, apps, and shortcuts organised in one place.</div>
+        <div class="feature-title">Tracker &amp; Ad Blocking</div>
+        <div class="feature-text">Helps reduce tracking, advertising clutter, and unwanted browser noise.</div>
       </div>
 
       <div class="feature-card">
-        <div class="feature-title">Powerful Search</div>
-        <div class="feature-text">Find settings, apps, and sites fast, without the mess.</div>
+        <div class="feature-title">DNS Protection</div>
+        <div class="feature-text">Choose trusted DNS providers and privacy-focused search options from inside the app.</div>
       </div>
 
       <div class="feature-card">
-        <div class="feature-title">Privacy focused</div>
-        <div class="feature-text">Built for everyday people, not data harvesting.</div>
+        <div class="feature-title">Multi-Page Browsing</div>
+        <div class="feature-text">Use four browser pages, quick URLs, favourites, and page controls in one clean workspace.</div>
       </div>
     </div>
 
-    <!-- PRICING (new) -->
     <section class="pricing" id="pricing">
       <h2 class="section-title">Pricing</h2>
 
       <div class="pricing-card">
         <div class="pricing-top">
-          <div class="pricing-name">WebStudio — Standard</div>
-          <div class="pricing-price">AUD $59</div>
+          <div class="pricing-name">Web Protect Pro — Standard</div>
+          <div class="pricing-price">AUD $20</div>
         </div>
 
         <div class="pricing-sub">3-year licence · No subscription</div>
 
         <ul class="pricing-list">
           <li>One user</li>
-          <li>All core features</li>
+          <li>Windows privacy browser</li>
+          <li>Tracker and ad blocking controls</li>
+          <li>DNS, search, popup, favourites, and quick URL tools</li>
           <li>Updates included for 3 years</li>
           <li>Buy once, use it</li>
         </ul>
 
-<a
-  class="btn-buy"
-  href="https://buy.stripe.com/3cI28revpbNw0FxfUj04800"
-  target="_blank"
-  rel="noopener"
->
-  Buy now
-</a>
-        
+        <a
+          class="btn-buy"
+          href="https://buy.stripe.com/3cI28revpbNw0FxfUj04800"
+          target="_blank"
+          rel="noopener"
+        >
+          Buy now
+        </a>
+
         <div class="pricing-note">Advanced edition coming later.</div>
       </div>
     </section>
 
     <div id="download" class="download-strip">
       <div class="download-title">Ready when you are.</div>
-      <div class="download-sub">Download WebStudio for Windows.</div>
-      <button class="btn-download" type="button" disabled>Download (coming soon)</button>
+      <div class="download-sub">
+        Download Web Protect Pro for Windows 10/11 — 64-bit PCs only.
+      </div>
+
+      <a
+        class="btn-download"
+        href="https://github.com/mickwhite73/web-protect-pro/releases/download/v1.0.0/WebStudio.Package_1.0.0.0_x64.msix"
+      >
+        Download for Windows x64
+      </a>
+
+      <div class="pricing-note">
+        32-bit Windows support is not available in this release.
+      </div>
     </div>
   </main>
 
@@ -111,17 +123,17 @@
     const themeToggle = document.getElementById("themeToggle");
 
     function applyTheme(theme) {
-      themeLink.href = theme === "classic" ? "classic.css?v=2" : "modern.css?v=2";
-      themeToggle.textContent = theme === "classic" ? "Classic" : "Modern";
+      themeLink.href = theme === "light" ? "light.css?v=2" : "dark.css?v=2";
+      themeToggle.textContent = theme === "light" ? "Light" : "Dark";
       localStorage.setItem("theme", theme);
     }
 
     const savedTheme = localStorage.getItem("theme");
-    applyTheme(savedTheme === "classic" ? "classic" : "modern");
+    applyTheme(savedTheme === "light" ? "light" : "dark");
 
     function toggleTheme() {
-      const isClassic = themeLink.href.includes("classic.css");
-      applyTheme(isClassic ? "modern" : "classic");
+      const isLight = themeLink.href.includes("light.css");
+      applyTheme(isLight ? "dark" : "light");
     }
   </script>
 
